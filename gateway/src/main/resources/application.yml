@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 10000
+
+zuul:
+  routes:
+    hello-service:
+      path: /hello-service/**
+      serviceId: hello-service
+    book-service:
+      path: /book-service/**
+      serviceId: book-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
